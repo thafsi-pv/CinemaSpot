@@ -1,0 +1,13 @@
+:root {
+  --primary-bg: rgba(0, 0, 0, 0.835);
+  --textbox-bg: rgba(24, 24, 24, 0.91);
+  --badge-bg:white;
+  --text-color:rgb(0, 0, 0);
+}
+
+.light-mode {
+  --primary-bg: rgba(197, 197, 197, 0.829);
+  --textbox-bg: rgba(246, 246, 246, 0.938);
+  --badge-bg:black;
+  --text-color:rgb(255, 255, 255);
+}
