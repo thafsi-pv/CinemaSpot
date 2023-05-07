@@ -1,4 +1,4 @@
-import "./login.css";
+import "./LogIn.css";
 import logo from "../../assets/tcslogo.png";
 import { useContext, useEffect, useRef, useState } from "react";
 import { AuthContext } from "../../context/Auth";
