@@ -13,6 +13,7 @@ The app was built using React with the following tech:
 - Local Storage: For storing the authentication token
 - plain css: For styling and responsive user interface
 - Axios: For making HTTP requests to the TMDB API
+- Vite: For bundling and serving the app
 
 ## Features
 
@@ -55,6 +56,10 @@ The authentication token is stored in the local storage once the user is authent
 
 The application is designed to be responsive and work well on different devices. This is achieved using the media query.
 
+### Dark and Light Mode 
+
+The app includes a switch on the home page that allows users to switch between light and dark mode. The switch is implemented using a plain CSS variable 
+
 ## How to Run
 
 ### Install Dependencies
@@ -63,4 +68,4 @@ Run `npm install` to install the app's dependencies.
 
 ### Start the App
 
-Run `npm start` to start the app. The app will be served at `http://localhost:3000`.
+Run `npm run dev` to start the app. The app will be served at `http://localhost:5171`.

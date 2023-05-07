@@ -14,14 +14,27 @@ import { DarkMode } from "../../context/DarkModeContext";
 function HomePage() {
   const Auth = useContext(AuthContext);
   const navigate = useNavigate();
-  const isDarkMode=useContext(DarkMode);
+  const isDarkMode = useContext(DarkMode);
 
   const [movieList, setMovieList] = useState([{}]);
   const [searchText, setSearchText] = useState("");
-  
+
   useEffect(() => {
     getMovieList();
   }, []);
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      if (searchText != "") {
+        getSearchData(searchText);
+      } else {
+        getMovieList();
+      }
+    }, 500);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [searchText]);
 
   const getMovieList = async () => {
     const data = await axios(TMDB_MOVIE_LIST_API_);
@@ -36,9 +49,7 @@ function HomePage() {
   const handleSearch = (e) => {
     const text = e.target.value;
     setSearchText(text);
-    if (text != "") {
-      getSearchData(text);
-    } else {
+    if (text == "") {
       getMovieList();
     }
   };
@@ -55,7 +66,13 @@ function HomePage() {
   }
   return (
     <div className="home-main">
-      <div className={`home-overlay ${isDarkMode?.colorMode=='dark'?'home-overlay':'home-overlay light-mode'}`}></div>
+      <div
+        className={`home-overlay ${
+          isDarkMode?.colorMode == "dark"
+            ? "home-overlay"
+            : "home-overlay light-mode"
+        }`}
+      ></div>
       <Header />
       <div className="home-container">
         <div className="search-containter">
