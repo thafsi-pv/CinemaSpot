@@ -40,32 +40,4 @@ React Router DOM is used to implement protected routing. For a user to access th
 
 The list of movies is defined in the `HomePage` component and fetching from TMDB(The Movie Database). The search functionality is implemented using the `debounce` function.
 
-The list of movies is retrieved from the TMDB API using Axios. The `getMovieList` function in the `HomePage` component makes an HTTP request to the API and retrieves the data. This data is saved in a state `movieList` and itrate using map function. The search functionality is implemented using the debounce function from the Lodash Debounce library.
-
-![cs-home](./src/assets/CINEMASPOT_HOME.png)
-
-### Context API
-
-The context API is used to manage state across components. The `isAuth` state and `login` `logOut` function is stored in the `AuthContext` and used to control what components are shown based on whether the user is logged in or not.
-
-### Local Storage
-
-The authentication token is stored in the local storage once the user is authenticated. This token is then used to maintain the user's session and keep the user logged in across page refreshes.
-
-### Responsive Design
-
-The application is designed to be responsive and work well on different devices. This is achieved using the media query.
-
-### Dark and Light Mode 
-
-The app includes a switch on the home page that allows users to switch between light and dark mode. The switch is implemented using a plain CSS variable 
-
-## How to Run
-
-### Install Dependencies
-
-Run `npm install` to install the app's dependencies.
-
-### Start the App
-
-Run `npm run dev` to start the app. The app will be served at `http://localhost:5171`.
+The list of movies is retrieved from the TMDB API using Axios. The `getMovieList` function in the `HomePage` component makes an HTTP request to the API and retrieves the data. This data is saved in a state `movieList` and itrate using map function. The search functionality is implemented using the debounce method 
