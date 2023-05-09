@@ -40,7 +40,7 @@ React Router DOM is used to implement protected routing. For a user to access th
 
 The list of movies is defined in the `HomePage` component and fetching from TMDB(The Movie Database). The search functionality is implemented using the `debounce` function.
 
-The list of movies is retrieved from the TMDB API using Axios. The `getMovieList` function in the `HomePage` component makes an HTTP request to the API and retrieves the data. This data is saved in a state `movieList` and itrate using map function. The search functionality is implemented using the debounce function from the Lodash Debounce library.
+The list of movies is retrieved from the TMDB API using Axios. The `getMovieList` function in the `HomePage` component makes an HTTP request to the API and retrieves the data. This data is saved in a state `movieList` and itrate using map function. The search functionality is implemented using the debounce methord.
 
 ![cs-home](./src/assets/CINEMASPOT_HOME.png)
 
