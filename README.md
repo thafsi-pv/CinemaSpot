@@ -7,13 +7,13 @@ This is a movie search app using TMDB API where users can log in using a usernam
 
 The app was built using React with the following tech:
 
-- React Router DOM: For navigating between pages and implementing protected routing
-- Debounce: For implementing the debounce feature on the search functionality
-- Context API: For managing state across components
-- Local Storage: For storing the authentication token
-- plain css: For styling and responsive user interface
-- Axios: For making HTTP requests to the TMDB API
-- Vite: For bundling and serving the app
+- **React Router DOM**: For navigating between pages and implementing protected routing
+- **Debounce**: For implementing the debounce feature on the search functionality
+- **Context API**: For managing state across components
+- **Local Storage**: For storing the authentication token
+- **plain css**: For styling and responsive user interface
+- **Axios**: For making HTTP requests to the TMDB API
+- **Vite**: For bundling and serving the app
 
 ## Features
 
