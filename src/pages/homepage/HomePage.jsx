@@ -6,7 +6,7 @@ import {
   TMDB_SEARCH_API,
 } from "../../constants/tmdb-url";
 import axios from "axios";
-import Header from "../Header/Header";
+import Header from "../../components/Header/Header";
 import { AuthContext } from "../../context/Auth";
 import { useNavigate } from "react-router-dom";
 import { DarkMode } from "../../context/DarkModeContext";

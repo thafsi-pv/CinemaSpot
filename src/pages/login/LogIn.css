@@ -1,11 +1,4 @@
-.login {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: url("https://assets.nflxext.com/ffe/siteui/vlv3/efb4855d-e702-43e5-9997-bba0154152e0/42f6dd08-d478-46e4-a4a8-e3a93aa7e085/IN-en-20230417-popsignuptwoweeks-perspective_alpha_website_large.jpg");
-}
+
 .login-container {
   padding: 50px 80px;
   background-color: rgba(6, 0, 0, 0.627);
@@ -70,29 +63,6 @@ background-color: #e50914d0;
   background-color: black;
   opacity: 0.2;
   /* Here 0.2 is opacity, adjust according to your requirement */
-}
-
-.login::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.486);
-  mix-blend-mode: multiply;
-}
-.tcs-logo-container {
-  background-color: rgba(255, 255, 255, 0.869);
-}
-.tcs-logo {
-  position: absolute;
-  top: -40px;
-  left: 45px;
-  width: 300px;
-  height: 200px;
-  z-index: 2;
 }
 
 .input-div {
