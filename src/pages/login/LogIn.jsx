@@ -5,13 +5,16 @@ import { AuthContext } from "../../context/Auth";
 import { Link, useNavigate } from "react-router-dom";
 import Layout1 from "../../components/layout/Layout1";
 import Input from "../../components/Input/Input";
+import useHandleChange from "../../hooks/useHandleChange";
 
 const LogIn = () => {
   const Auth = useContext(AuthContext);
   const navigate = useNavigate();
 
   const usernameref = useRef(null);
-  const [formData, setFormData] = useState({});
+  const { formData, handleInputChange: customHandleChange } = useHandleChange({});
+
+  //const [formData, setFormData] = useState({});
 
   useEffect(() => {
     usernameref.current.focus();
@@ -26,9 +29,8 @@ const LogIn = () => {
   };
 
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
 
-    setFormData({ ...formData, [name]: value });
+    customHandleChange(e);
   };
   // if (Auth?.isAuth) {
   //   return navigate("/home");
@@ -44,7 +46,7 @@ const LogIn = () => {
           <form onSubmit={handleLogin} className="login-input-container">
             <div className="input-div">
               <Input
-                 refer={usernameref}
+                refer={usernameref}
                 type="text"
                 placeholder="User Name"
                 name="Username"
@@ -74,7 +76,10 @@ const LogIn = () => {
           <div className="sign-upnav">
             <div>
               <p>
-                New to CinemaSpot? <Link to='/signup'><span>Sign Up Now</span></Link>
+                New to CinemaSpot?{" "}
+                <Link to="/signup">
+                  <span>Sign Up Now</span>
+                </Link>
               </p>
             </div>
           </div>

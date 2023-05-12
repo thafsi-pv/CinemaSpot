@@ -10,6 +10,7 @@ import Error from "./pages/error/Error";
 import ProtectedRouterAfterLogIn from "./components/ProtectedRouterAfterLogIn";
 import ForgotPassword from "./pages/forgotpwd/ForgotPassword";
 import SignUp from "./pages/signup/SignUp";
+import Teaser from "./pages/teaser/Teaser";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             </Route>
             <Route element={<ProtectedRoutes />}>
               <Route element={<HomePage />} path="/home" exact />
+              <Route element={<Teaser />} path="/teaser/:id" />
             </Route>
             <Route element={<ForgotPassword />} path="/forgotpassword" />
             <Route element={<SignUp />} path="/signup" />

@@ -25,10 +25,10 @@
   }
   .tcs-logo {
     position: absolute;
-    top: -40px;
+    top: -30px;
     left: 45px;
-    width: 300px;
-    height: 200px;
+    width: 250px;
+    height: 180px;
     z-index: 2;
   }
   

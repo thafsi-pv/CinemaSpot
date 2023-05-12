@@ -5,22 +5,19 @@ import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
 import { AuthContext } from "../../context/Auth";
 import { DarkMode } from "../../context/DarkModeContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState("dark");
-  console.log("🚀 ~ file: Header.jsx:11 ~ Header ~ isDarkMode:", isDarkMode);
 
   const Aut = useContext(AuthContext);
   const color = useContext(DarkMode);
-  console.log("🚀 ~ file: Header.jsx:12 ~ Header ~ color:", color);
 
   useEffect(() => {
     setIsDarkMode(color.ColorMode);
   }, []);
 
   const handleLogOut = () => {
-    console.log("🚀 ~ file: Header.jsx:10 ~ Header ~ Aut:", Aut);
-
     Aut.logout();
   };
 
@@ -32,7 +29,7 @@ const Header = () => {
   return (
     <div className="header-container">
       <div>
-        <img className="logo" src={logo} alt="tcs_logo" />
+       <Link to='/home'> <img className="logo" src={logo} alt="tcs_logo" /></Link>
       </div>
       <div className="header-right">
         <div className="light_dark">
