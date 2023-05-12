@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "react-router-dom";
 import Layout1 from "../../components/layout/Layout1";
 import "../teaser/Teaser.css";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import CastCard from "../../components/castCard/CastCard";
 import { DarkMode } from "../../context/DarkModeContext";
@@ -15,9 +15,12 @@ const Teaser = () => {
   const { id } = useParams();
   const navigate = useNavigate();
   const Auth=useContext(AuthContext)
+  const topref=useRef(null)
   useEffect(() => {
     getVideoDetails();
     getCastDetails();
+    topref.current.scrollIntoView({behavior:'smooth'})
+
   }, []);
 
   const getVideoDetails = async () => {
@@ -49,15 +52,16 @@ const Teaser = () => {
         }`}
       ></div>
       <Header />
-      <div className="home-container">
+      <div className="home-container teaser-container" ref={topref}>
         <div className="main-container">
           <h3>{videoDetails.name}</h3>
-          <div className="yt-iframe">
+          <div className="yt-iframe videowrapper">
             <iframe
               id="player"
               type="text/html"
               width="740"
               height="490"
+              allow="autoplay"
               src={`http://www.youtube.com/embed/${videoDetails.videoId}?autoplay=1&modestbranding=1&enablejsapi=1&origin=http://example.com`}
               frameBorder="0"
             ></iframe>

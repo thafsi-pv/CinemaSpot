@@ -50,6 +50,13 @@ body {
   width: 90%;
   object-fit: fill;
   cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.15s ease-in-out;
+  transform-origin: center center;
+}
+
+.movie-card img:hover{
+  transform: scale(1.1);
 }
 
 .home-overlay {

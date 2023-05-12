@@ -1,20 +1,40 @@
-.yt-iframe{
+.yt-iframe {
   padding-bottom: 10px;
-  border-bottom: 1px dashed rgb(201, 201, 201);
+  /* border-bottom: 1px dashed rgba(201, 201, 201, 0.383); */
+}
+.teaser-container {
+  margin-top: 30px;
 }
 
-.main-container{
-      position: relative;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.main-container {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.cast-card-container{
+.cast-card-container {
   display: flex;
   margin-top: 10px;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.videowrapper {
+  float: none;
+  clear: both;
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+.videowrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

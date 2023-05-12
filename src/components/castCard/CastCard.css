@@ -44,3 +44,25 @@
   font-size: 0.875rem;
   line-height: 1.6;
 }
+
+@media only screen and (max-width: 768px) {
+    .card{
+      width: 100px;
+      height: 250px;
+    }
+    .card-title{
+        font-size: smaller !important;
+    }
+   
+  }
+  @media only screen and (max-width: 480px) {
+    /* Adjust the overlay for extra small screens */
+  
+    .card{
+      width: 100px;
+      height: 250px;
+    }
+    .card-title{
+        font-size: smaller !important;
+    }
+  }
