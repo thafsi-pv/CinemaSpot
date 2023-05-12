@@ -47,17 +47,17 @@ const LogIn = () => {
             <div className="input-div">
               <Input
                 refer={usernameref}
-                type="text"
-                placeholder="User Name"
-                name="Username"
+                type={"text"}
+                palaceholder={"User Name"}
+                name={"Username"}
                 onchange={handleInputChange}
               />
             </div>
             <div className="input-div">
               <Input
-                type="password"
-                placeholder="Password"
-                name="Password"
+                type={"password"}
+                palaceholder={"Password"}
+                name={"Password"}
                 onchange={handleInputChange}
               />
               <div>
@@ -76,9 +76,9 @@ const LogIn = () => {
           <div className="sign-upnav">
             <div>
               <p>
-                New to CinemaSpot?{" "}
+                New to CinemaSpot?
                 <Link to="/signup">
-                  <span>Sign Up Now</span>
+                  <span className="signup-link">  Sign Up Now</span>
                 </Link>
               </p>
             </div>

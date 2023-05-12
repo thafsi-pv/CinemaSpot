@@ -28,7 +28,7 @@ const SignUp = () => {
           <div className="input-div">
             <Input
               type={"email"}
-              palaceholder={"Enter password"}
+              palaceholder={"Enter your email"}
               name={"pasword"}
             />
           </div>

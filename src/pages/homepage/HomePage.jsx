@@ -73,7 +73,7 @@ function HomePage() {
                 <input
                   type="text"
                   className="search-box"
-                  placeholder="search"
+                  placeholder="Search for a movie"
                   value={searchText}
                   onChange={(e) => setSearchText(e.target.value)}
                 />

@@ -89,14 +89,17 @@ background-color: #e50914d0;
   color: rgba(255, 245, 245, 0.444);
 }
 
-.sign-upnav p span {
-  color: rgba(255, 245, 245, 0.822);
+.sign-upnav p  {
+  color: rgba(255, 245, 245, 0.771) !important;
 }
 
 
 .error{
   color: red !important;
   font-size: x-small;
+}
+.signup-link{
+  font-weight: bold;
 }
 
 

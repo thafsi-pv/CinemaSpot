@@ -1,5 +1,6 @@
 .yt-iframe{
-  
+  padding-bottom: 10px;
+  border-bottom: 1px dashed rgb(201, 201, 201);
 }
 
 .main-container{
@@ -9,4 +10,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.cast-card-container{
+  display: flex;
+  margin-top: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }

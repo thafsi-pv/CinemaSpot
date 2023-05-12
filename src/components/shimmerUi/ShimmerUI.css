@@ -7,20 +7,20 @@
   margin: auto;
 }
 .shimmer-card-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
-  margin:20px auto;
+  margin: 20px auto;
 }
 .shimmer-main {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 75%;
-  margin:150px auto;
+  margin: 150px auto;
 }
-.top-card{
+.top-card {
   width: 75%;
   height: 50px;
   background-color: rgba(239, 236, 236, 0.671);
