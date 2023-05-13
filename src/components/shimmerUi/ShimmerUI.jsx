@@ -12,7 +12,7 @@ const ShimmerUI = () => {
           <div className="shimmer-card-container">
             {Array.from({ length: 8 }).map((i) => {
               return (
-                <div class="card">
+                <div className="card">
                   <div className="shimmer-image"></div>
                 </div>
               );

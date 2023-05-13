@@ -3,7 +3,6 @@ import { TMDB_MOVIE_LIST_API_, TMDB_SEARCH_API } from "../constants/tmdb-url";
 import axios from "axios";
 
 const useDebounce = (searchTxt, delay) => {
-  console.log("🚀 ~ file: useDebounce.jsx:6 ~ useDebounce ~ searchTxt:", searchTxt)
   const [debounceList, setDebounceList] = useState([{}]);
 
   useEffect(() => {

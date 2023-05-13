@@ -9,9 +9,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { DarkMode } from "../../context/DarkModeContext";
 import useDebounce from "../../hooks/useDebounce";
 import ShimmerUI from "../../components/shimmerUi/ShimmerUI";
+import useLocalStorage from "../../hooks/useLocalStorage";
 
 function HomePage() {
   const Auth = useContext(AuthContext);
+  const token=useLocalStorage('token')
   const navigate = useNavigate();
   const isDarkMode = useContext(DarkMode);
 
@@ -41,9 +43,13 @@ function HomePage() {
   //   setMovieList(data?.data?.results);
   // };
 
-  if (!Auth?.isAuth) {
-    navigate("/login");
-  }
+  // if (!Auth?.isAuth) {
+  //   navigate("/login");
+  // }
+  // if (token=='') {
+  //   console.log("🚀 ~ file: HomePage.jsx:50 ~ HomePage ~ token:", token)
+  //   navigate("/login");
+  // }
 
   return (
     <div className="home-main">

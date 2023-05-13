@@ -18,10 +18,10 @@ function App() {
       <DarkModeProvider>
         <BrowserRouter>
           <Routes>
-            <Route element={<ProtectedRouterAfterLogIn />}>
-              <Route path="/" element={<LogIn />} />
-              <Route path="/login" element={<LogIn />} />
-            </Route>
+            <Route element={<ProtectedRouterAfterLogIn />}> 
+            <Route path="/" element={<LogIn />} />
+            <Route path="/login" element={<LogIn />} />
+            </Route> 
             <Route element={<ProtectedRoutes />}>
               <Route element={<HomePage />} path="/home" exact />
               <Route element={<Teaser />} path="/teaser/:id" />

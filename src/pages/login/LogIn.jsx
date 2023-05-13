@@ -12,7 +12,9 @@ const LogIn = () => {
   const navigate = useNavigate();
 
   const usernameref = useRef(null);
-  const { formData, handleInputChange: customHandleChange } = useHandleChange({});
+  const { formData, handleInputChange: customHandleChange } = useHandleChange(
+    {}
+  );
 
   //const [formData, setFormData] = useState({});
 
@@ -21,15 +23,12 @@ const LogIn = () => {
   }, []);
 
   const handleLogin = (event) => {
-    console.log("🚀 ~ file: LogIn.jsx:15 ~ LogIn ~ formData:", formData);
-
     event.preventDefault();
     Auth.login(formData.Username, formData.Password);
     navigate("/home", { replace: true });
   };
 
   const handleInputChange = (e) => {
-
     customHandleChange(e);
   };
   // if (Auth?.isAuth) {
@@ -43,7 +42,10 @@ const LogIn = () => {
           <div className="login-title">
             <p>Sign In</p>
           </div>
-          <form onSubmit={handleLogin} className="login-input-container">
+          <form
+            onSubmit={(e) => handleLogin(e)}
+            className="login-input-container"
+          >
             <div className="input-div">
               <Input
                 refer={usernameref}
@@ -78,7 +80,7 @@ const LogIn = () => {
               <p>
                 New to CinemaSpot?
                 <Link to="/signup">
-                  <span className="signup-link">  Sign Up Now</span>
+                  <span className="signup-link"> Sign Up Now</span>
                 </Link>
               </p>
             </div>
