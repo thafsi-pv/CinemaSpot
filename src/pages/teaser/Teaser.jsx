@@ -7,41 +7,48 @@ import CastCard from "../../components/castCard/CastCard";
 import { DarkMode } from "../../context/DarkModeContext";
 import Header from "../../components/Header/Header";
 import { AuthContext } from "../../context/Auth";
+import { API_KEY, TMDB_VIDEO_API } from "../../constants/tmdb-url";
 
 const Teaser = () => {
   const [videoDetails, setVideoDetails] = useState({ videoId: "", title: "" });
   const [castDetails, setCastDetails] = useState([{}]);
   const isDarkMode = useContext(DarkMode);
   const { id } = useParams();
-  const navigate = useNavigate();
-  const Auth=useContext(AuthContext)
-  const topref=useRef(null)
+  //const navigate = useNavigate();
+  //const Auth=useContext(AuthContext)
+  const topref = useRef(null);
+
   useEffect(() => {
     getVideoDetails();
     getCastDetails();
-    topref.current.scrollIntoView({behavior:'smooth'})
-
+    topref.current.scrollIntoView({ behavior: "smooth" });
   }, []);
 
   const getVideoDetails = async () => {
-    const data = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/videos?api_key=d3449ff6ec0c027623bf6b6f5fff78b3`
-    );
-    const teaser = data?.data?.results.filter(
-      (item) => item.type == "Trailer" || item.type == "Teaser"
-    );
-    setVideoDetails({ videoId: teaser[0].key, name: teaser[0].name });
+    try {
+      const API = TMDB_VIDEO_API + id + "/videos";
+      const data = await axios(API, { params: { api_key: API_KEY } });
+      const teaser = data?.data?.results.filter(
+        (item) => item.type == "Trailer" || item.type == "Teaser"
+      );
+      setVideoDetails({ videoId: teaser[0].key, name: teaser[0].name });
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const getCastDetails = async () => {
-    const data = await axios.get(
-      `https://api.themoviedb.org/3/movie/${id}/credits?api_key=d3449ff6ec0c027623bf6b6f5fff78b3`
-    );
-    setCastDetails(data?.data?.cast);
+    try {
+      const API = TMDB_VIDEO_API + id + "/credits";
+      const data = await axios.get(API, { params: { api_key: API_KEY } });
+      setCastDetails(data?.data?.cast);
+    } catch (error) {
+      console.error(error);
+    }
   };
-  if (!Auth?.isAuth) {
-    navigate("/login");
-  }
+  // if (!Auth?.isAuth) {
+  //   navigate("/login");
+  // }
   return (
     <>
       <div
@@ -62,7 +69,7 @@ const Teaser = () => {
               width="740"
               height="490"
               allow="autoplay"
-              src={`http://www.youtube.com/embed/${videoDetails.videoId}?autoplay=1&modestbranding=1&enablejsapi=1&origin=http://example.com`}
+              src={`https://www.youtube.com/embed/${videoDetails.videoId}?autoplay=1&modestbranding=1&enablejsapi=1&origin=http://example.com`}
               frameBorder="0"
             ></iframe>
           </div>

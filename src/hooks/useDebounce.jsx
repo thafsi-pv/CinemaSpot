@@ -19,15 +19,22 @@ const useDebounce = (searchTxt, delay) => {
   }, [searchTxt]);
 
   const getSearchData = async (text) => {
-    const data = await axios(TMDB_SEARCH_API, { params: { query: text } });
-    setDebounceList(data?.data?.results);
+    try {
+      const data = await axios(TMDB_SEARCH_API, { params: { query: text } });
+      setDebounceList(data?.data?.results);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const getMovieList = async () => {
-    const data = await axios(TMDB_MOVIE_LIST_API_);
-    setDebounceList(data?.data?.results);
+    try {
+      const data = await axios(TMDB_MOVIE_LIST_API_);
+      setDebounceList(data?.data?.results);
+    } catch (error) {
+      console.error(error);
+    }
   };
-
 
   return debounceList;
 };

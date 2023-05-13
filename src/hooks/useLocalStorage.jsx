@@ -8,25 +8,25 @@ const useLocalStorage = (initial) => {
     setValue(data);
   }, []);
 
-  const handleSetLS = (val, token) => {
+  const handleSetLocalStorage = (val, token) => {
     localStorage.setItem(val, token);
   };
 
-  const handleGetLS = (val) => {
+  const handleGetLocalStorage = (val) => {
     const data = localStorage.getItem(val);
     setValue(data);
     return data;
   };
 
-  const handleRemoveLS = (val) => {
+  const handleRemoveLocalStorage = (val) => {
     localStorage.removeItem(val);
   };
 
   return {
     value,
-    handleGetLS,
-    handleSetLS,
-    handleRemoveLS,
+    handleGetLocalStorage,
+    handleSetLocalStorage,
+    handleRemoveLocalStorage,
   };
 };
 

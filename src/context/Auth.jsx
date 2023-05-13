@@ -7,22 +7,21 @@ export const AuthContextProvider = (props) => {
   const [isAuth, setIsAuth] = useState(false);
   const [authError, setAuthError] = useState("");
   const {
-    value,
-    handleGetLS,
-    handleSetLS,
-    handleRemoveLS,
+    handleGetLocalStorage,
+    handleSetLocalStorage,
+    handleRemoveLocalStorage,
   } = useLocalStorage("token");
 
   useEffect(() => {
     // const token = localStorage.getItem("token");
-    const token = handleGetLS("token");
+    const token = handleGetLocalStorage("token");
     token != "" && setIsAuth(true);
   }, []);
 
   const login = (username, password) => {
     if (username === "test" && password === "test") {
       //localStorage.setItem("token", "my-token");
-      handleSetLS("token", "my-token");
+      handleSetLocalStorage("token", "my-token");
       setIsAuth(true);
       setAuthError({});
     } else {
@@ -32,7 +31,7 @@ export const AuthContextProvider = (props) => {
 
   const logout = () => {
     //localStorage.removeItem("token");
-    handleRemoveLS("token");
+    handleRemoveLocalStorage("token");
     setIsAuth(false);
     setAuthError("");
   };

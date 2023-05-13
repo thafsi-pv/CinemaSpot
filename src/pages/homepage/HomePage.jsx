@@ -1,8 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./HomePage.css";
-import {
-  TMDB_IMAGE_URL,
-} from "../../constants/tmdb-url";
+import { TMDB_IMAGE_URL } from "../../constants/tmdb-url";
 import Header from "../../components/Header/Header";
 import { AuthContext } from "../../context/Auth";
 import { Link, useNavigate } from "react-router-dom";
@@ -12,44 +10,9 @@ import ShimmerUI from "../../components/shimmerUi/ShimmerUI";
 import useLocalStorage from "../../hooks/useLocalStorage";
 
 function HomePage() {
-  const Auth = useContext(AuthContext);
-  const token=useLocalStorage('token')
-  const navigate = useNavigate();
   const isDarkMode = useContext(DarkMode);
-
   const [searchText, setSearchText] = useState("");
   const movieList = useDebounce(searchText, 500);
-
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     if (searchText != "") {
-  //       getSearchData(searchText);
-  //     } else {
-  //       getMovieList();
-  //     }
-  //   }, 500);
-  //   return () => {
-  //     clearTimeout(timeout);
-  //   };
-  // }, [searchText]);
-
-  // const getMovieList = async () => {
-  //   const data = await axios(TMDB_MOVIE_LIST_API_);
-  //   setMovieList(data?.data?.results);
-  // };
-
-  // const getSearchData = async (text) => {
-  //   const data = await axios(TMDB_SEARCH_API, { params: { query: text } });
-  //   setMovieList(data?.data?.results);
-  // };
-
-  // if (!Auth?.isAuth) {
-  //   navigate("/login");
-  // }
-  // if (token=='') {
-  //   console.log("🚀 ~ file: HomePage.jsx:50 ~ HomePage ~ token:", token)
-  //   navigate("/login");
-  // }
 
   return (
     <div className="home-main">
