@@ -6,11 +6,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 76px;
+  max-height: 76px;
   position: relative;
   z-index: 2;
   /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .header-right {
   width: 200px;
