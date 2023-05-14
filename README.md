@@ -1,7 +1,7 @@
 
 # CINEMA SPOT  ![cs-Logo](/src/assets/tcslogo.png)
 <p>
-    <img src="/src/assets/tcslogo.pngg" width="220" height="240" />
+    <img src="/src/assets/tcslogo.png" width="220" height="240" />
 </p>
 ![vite-log](/public/vite.svg)
 
