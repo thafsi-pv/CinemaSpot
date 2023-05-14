@@ -1,7 +1,7 @@
 
-# CINEMA SPOT  ![cs-Logo](./src/assets/tcslogo.png)
+# CINEMA SPOT  ![cs-Logo](/src/assets/tcslogo.png)
 
-![vite-log](./public/vite.svg)
+![vite-log](/public/vite.svg)
 
 This is a movie search app using TMDB API where users can log in using a username and password. If the user enters the correct username and password (which are "test" for both), they will be redirected to the home page. Otherwise, a validation message will be displayed.
 
