@@ -1,6 +1,6 @@
-* {
+/* * {
   color: white !important;
-}
+} */
 .header-container {
   padding: 10px;
   display: flex;
@@ -36,18 +36,16 @@
 .color-switch {
   width: 30px;
   height: 30px;
+  color: var(--primary-text);;
 }
 .color-switch:hover {
- color: red !important;
+  color: rgb(199, 199, 199);
 }
 
 .avatar {
   width: 30px;
   height: 30px;
 }
-
-
-
 
 .avatar-logout {
   display: flex;
@@ -56,19 +54,17 @@
   margin-top: 6px;
   cursor: pointer;
   background-color: var(--badge-bg);
-  color: black !important;
+  color: var(--text-color);
   font-size: x-small;
   padding: 2px 5px;
   border-radius: 4px;
   font-weight: 500;
   margin-top: 3px;
-  
 }
 
-.avatar-logout p  {
-  color:var(--text-color) !important;
-  
+.avatar-logout p {
+  color: var(--badge-text);
 }
-.avatar  {
-  color: (--text-color) !important;
-}
+/* .avatar {
+  color: (--text-color);
+} */

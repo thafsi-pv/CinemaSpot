@@ -90,7 +90,7 @@ background-color: #e50914d0;
 }
 
 .sign-upnav p  {
-  color: rgba(255, 245, 245, 0.771) !important;
+  color: rgba(255, 245, 245, 0.665) !important;
 }
 
 
@@ -100,6 +100,7 @@ background-color: #e50914d0;
 }
 .signup-link{
   font-weight: bold;
+  color: rgba(255, 245, 245, 0.86) !important;
 }
 
 

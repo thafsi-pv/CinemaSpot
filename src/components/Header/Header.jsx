@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import logo from "../../assets/tcslogo.png";
+import avatar from '../../assets/avatar.png'
 import "./Header.css";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 import { RxAvatar } from "react-icons/rx";
@@ -11,10 +12,10 @@ const Header = () => {
   const [isDarkMode, setIsDarkMode] = useState("dark");
 
   const Aut = useContext(AuthContext);
-  const color = useContext(DarkMode);
+  const {ColorMode,handleModeChange} = useContext(DarkMode);
 
   useEffect(() => {
-    setIsDarkMode(color.ColorMode);
+    setIsDarkMode(ColorMode);
   }, []);
 
   const handleLogOut = () => {
@@ -22,8 +23,9 @@ const Header = () => {
   };
 
   const handleColorMode = (mode) => {
-    color.setIColorMode(mode);
+    //color.setIColorMode(mode);
     setIsDarkMode(mode);
+    handleModeChange(mode)
   };
 
   return (
@@ -50,7 +52,7 @@ const Header = () => {
           <p>Log Out</p>
           <img
             className="avatar"
-            src="https://static.vecteezy.com/system/resources/previews/002/002/403/original/man-with-beard-avatar-character-isolated-icon-free-vector.jpg"
+            src={avatar}
             alt=""
           />
           {/* <RxAvatar className="avatar" color="black" style={{ color: "black", fontSize: "1.5em" }} /> */}

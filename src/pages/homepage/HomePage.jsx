@@ -1,32 +1,34 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./HomePage.css";
 import { TMDB_IMAGE_URL } from "../../constants/tmdb-url";
 import Header from "../../components/Header/Header";
 import { AuthContext } from "../../context/Auth";
 import { Link, useNavigate } from "react-router-dom";
 import { DarkMode } from "../../context/DarkModeContext";
-import useDebounce from "../../hooks/useDebounce";
+import useGetMovies from "../../hooks/useGetMovies";
 import ShimmerUI from "../../components/shimmerUi/ShimmerUI";
 import useLocalStorage from "../../hooks/useLocalStorage";
+import useDebounce from "../../hooks/useDebounce";
+import { debounceDelay } from "../../constants/Constants";
 
 function HomePage() {
-  const isDarkMode = useContext(DarkMode);
   const [searchText, setSearchText] = useState("");
-  const movieList = useDebounce(searchText, 500);
+  const { movieList, getMovieList, getSearchData } = useGetMovies();
+  useDebounce(
+    searchText == "" ? getMovieList : getSearchData,
+    searchText,
+    debounceDelay
+  );
+
+  useEffect(() => {}, [searchText]);
 
   return (
     <div className="home-main">
-      {movieList.length == 1 ? (
+      {movieList.length == 1 || movieList.length == 0 ? (
         <ShimmerUI />
       ) : (
         <>
-          <div
-            className={`home-overlay ${
-              isDarkMode?.colorMode == "dark"
-                ? "home-overlay"
-                : "home-overlay light-mode"
-            }`}
-          ></div>
+          <div className="home-overlay"></div>
           <Header />
           <div className="home-container">
             <div className="search-containter">

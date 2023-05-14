@@ -1,7 +1,8 @@
 :root {
   --primary-bg: rgba(0, 0, 0, 0.835);
-  --textbox-bg: rgba(24, 24, 24, 0.91);
+  --textbox-bg: rgb(67 67 67 / 91%);
   --badge-bg:white;
+  --badge-text:rgb(0, 0, 0);
   --text-color:rgb(0, 0, 0);
 }
 
