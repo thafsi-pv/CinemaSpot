@@ -1,11 +1,11 @@
 
 # CINEMA SPOT  ![cs-Logo](/src/assets/tcslogo.png)
-<p>
+<!-- <p>
     <img src="/src/assets/tcslogo.png" width="220" height="240" />
-</p>
-![vite-log](/public/vite.svg)
+</p> -->
 
-This is a movie search app using TMDB API where users can log in using a username and password. If the user enters the correct username and password (which are "test" for both), they will be redirected to the home page. Otherwise, a validation message will be displayed.
+
+This is a movie search and view teaser app using TMDB API where users can log in using a username and password. If the user enters the correct username and password (which are "test" for both), they will be redirected to the home page. Otherwise, a validation message will be displayed.
 
 ## Technologies Used
 
@@ -13,11 +13,14 @@ The app was built using React with the following tech:
 
 - **React Router DOM**: For navigating between pages and implementing protected routing
 - **Debounce**: For implementing the debounce feature on the search functionality
+- **Custom Hooks**: For debounce ,form data handle, get movielist and manage local storage these all perform with custom hook
+- **Shimmer UI**: Custom shimmer ui component 
 - **Context API**: For managing state across components
 - **Local Storage**: For storing the authentication token
 - **plain css**: For styling and responsive user interface
 - **Axios**: For making HTTP requests to the TMDB API
 - **Vite**: For bundling and serving the app
+
 
 ## Features
 
@@ -27,6 +30,7 @@ The app was built using React with the following tech:
 - Log out button: Users can log out of the app by clicking on the log out button on the home page.
 - Movie list with search: The home page displays a list of movies and a search box that allows users to filter the list. The search box has a debounce feature that delays the search until the user has finished typing.
 - If the user is  not authenticated and trying to go to home page direct with url redirect to login page
+- From movie list user can click in movie and navigating to teaser page these page also shows cast list
 
 ## Implementation Details
 
@@ -39,6 +43,7 @@ The app checks the entered credentials against the hardcoded values in the `Auth
 ### Protected Routing
 
 React Router DOM is used to implement protected routing. For a user to access the home page, they must be logged in. If the user is not logged in, they will be redirected to the login page.
+Once user is loged in can't go to login page these also protected with protectedAfterLogin component
 
 ### Movie List
 
@@ -47,6 +52,11 @@ The list of movies is defined in the `HomePage` component and fetching from TMDB
 The list of movies is retrieved from the TMDB API using Axios. The `getMovieList` function in the `HomePage` component makes an HTTP request to the API and retrieves the data. This data is saved in a state `movieList` and itrate using map function. The search functionality is implemented using the debounce methord.
 
 ![cs-home](./src/assets/CINEMASPOT_HOME.png)
+
+### Teaser Page
+
+When User click the movie by dynamic routing passing id of the movie and feth id from url by `useParam` hook provided by react router dom 
+and then fetching teaser data from The Movie Database (TMDB).
 
 ### Context API
 
