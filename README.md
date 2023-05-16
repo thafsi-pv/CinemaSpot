@@ -1,5 +1,5 @@
 
-# CINEMA SPOT  ![cs-Logo](https://photos.app.goo.gl/R2zSDHWwTrmLsgj69)
+# CINEMA SPOT  ![cs-Logo](https://ik.imagekit.io/xjbozxfwc/tcslogo.png?updatedAt=1684224970492)
 <!-- <p>
     <img src="/src/assets/tcslogo.png" width="220" height="240" />
 </p> -->
@@ -38,7 +38,7 @@ The app was built using React with the following tech:
 
 The app checks the entered credentials against the hardcoded values in the `AuthContext` component. If the values match, the authentication token is stored in the local storage, the `isAuth` state is set to `true`, and the user is redirected to the home page. Otherwise, an error message is displayed to the user.
 
-![cs-login](./src/assets/CINEMASPOT_LOGIN.png)
+![cs-login](https://ik.imagekit.io/xjbozxfwc/CINEMASPOT_LOGIN.png?updatedAt=1684225009860)
 
 ### Protected Routing
 
@@ -51,7 +51,7 @@ The list of movies is defined in the `HomePage` component and fetching from TMDB
 
 The list of movies is retrieved from the TMDB API using Axios. The `getMovieList` function in the `HomePage` component makes an HTTP request to the API and retrieves the data. This data is saved in a state `movieList` and itrate using map function. The search functionality is implemented using the debounce methord.
 
-![cs-home](./src/assets/CINEMASPOT_HOME.png)
+![cs-home](https://ik.imagekit.io/xjbozxfwc/CINEMASPOT_HOME.png?updatedAt=1684225008519)
 
 ### Teaser Page
 
