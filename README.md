@@ -5,6 +5,10 @@
 </p> -->
 
 
+https://github.com/thafzi/CinemaSpot/assets/22377348/a909e3ae-37e5-4882-880e-8819ebc65341
+
+
+
 This is a movie search and view teaser app using TMDB API where users can log in using a username and password. If the user enters the correct username and password (which are "test" for both), they will be redirected to the home page. Otherwise, a validation message will be displayed.
 
 ## Technologies Used
