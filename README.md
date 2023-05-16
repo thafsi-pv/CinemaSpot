@@ -1,5 +1,5 @@
 
-# CINEMA SPOT  ![cs-Logo](/src/assets/tcslogo.png)
+# CINEMA SPOT  ![cs-Logo](https://photos.app.goo.gl/R2zSDHWwTrmLsgj69)
 <!-- <p>
     <img src="/src/assets/tcslogo.png" width="220" height="240" />
 </p> -->
